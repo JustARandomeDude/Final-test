@@ -50,7 +50,7 @@
       font-weight: 800;
     }
 
-    /* ---------- Game area (board + sidebar) ---------- */
+    /* ---------- board + sidebar ---------- */
     .game-area {
       display: flex;
       justify-content: center;
@@ -82,7 +82,7 @@
       font-weight: 800;
     }
 
-    /* One class per tile colour */
+    /*  tile colour */
     .tile-1  { background: #dcfce7; color: #10b981; }
     .tile-2  { background: #fee2e2; color: #ef4444; }
     .tile-3  { background: #dbeafe; color: #3b82f6; }
