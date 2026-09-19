@@ -6,6 +6,41 @@ var totalSeconds = 0;
 var button = document.querySelector(".start-btn");
 var clockDisplay = document.querySelector(".clock-time");
 var board = document.querySelector(".board");
+
+var winMessage = document.querySelector(".win-message");
+
+function showWinMessage() {
+  winMessage.style.display = "block";
+}
+
+function hideWinMessage() {
+  winMessage.style.display = "none";
+}
+
+function hasPlayerWon() {
+  var tiles = Array.from(board.children);
+
+  for (var i = 0; i < tiles.length; i++) {
+    if (i === tiles.length - 1) {
+      if (!tiles[i].classList.contains("tile-empty")) {
+        return false;
+      }
+    } else {
+      if (tiles[i].classList.contains("tile-empty")) {
+        return false;
+      }
+
+      var tileValue = Number(tiles[i].textContent.trim());
+
+      if (tileValue !== i + 1) {
+        return false;
+      }
+    }
+  }
+
+  return true;
+}
+
 // sec to min:sec
 function formatTime(seconds) {
   var minutes = Math.floor(seconds / 60);
@@ -21,7 +56,7 @@ function formatTime(seconds) {
 
   return minutes + ":" + remainingSeconds;
 }
-// chịu không biết 2.2 nghĩa là gì
+// chịu em không biết 2.2 nghĩa là gì :)
 function shuffleBoard() {
   var tiles = Array.from(board.children);
 
@@ -92,14 +127,22 @@ function moveBlackTile(direction) {
   }
 
   Move_count += 1;
+
+  if (hasPlayerWon()) {
+    showWinMessage();
+
+    if (timerId !== null) {
+      clearInterval(timerId);
+      timerId = null;
+    }
+  }
 }
 
 window.addEventListener("keydown", function (event) {
+  var key = event.key.toLowerCase();
   if (timerId === null) {
     return;
   }
-
-  var key = event.key.toLowerCase();
 
   if (key === "w" || key === "arrowup") {
     event.preventDefault();
@@ -122,6 +165,7 @@ window.addEventListener("keydown", function (event) {
 
 button.addEventListener("click", function () {
   if (timerId === null) {
+    hideWinMessage();
     shuffleBoard();
 
     timerId = setInterval(function () {
@@ -142,6 +186,7 @@ button.addEventListener("click", function () {
     totalSeconds = 0;
 
     clockDisplay.textContent = formatTime(totalSeconds);
+    hideWinMessage();
 
     button.textContent = "Bắt đầu";
 
