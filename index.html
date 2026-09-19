@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Final test</title>
+
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="top-bar">
+        <button class="start-btn">Bắt đầu</button>
+        <div class="win-message">YOU WIN!</div>
+      </div>
+
+      <div class="game-area">
+        <div class="board">
+          <div class="tile tile-1">1</div>
+          <div class="tile tile-2">2</div>
+          <div class="tile tile-3">3</div>
+          <div class="tile tile-4">4</div>
+          <div class="tile tile-5">5</div>
+          <div class="tile tile-6">6</div>
+          <div class="tile tile-7">7</div>
+          <div class="tile tile-8">8</div>
+          <div class="tile tile-9">9</div>
+          <div class="tile tile-10">10</div>
+          <div class="tile tile-11">11</div>
+          <div class="tile tile-empty"></div>
+        </div>
+
+        <div class="sidebar">
+          <div class="clock-card">
+            <h2 class="card-title">Đồng Hồ</h2>
+            <div class="clock-time">00:00</div>
+          </div>
+
+          <div class="guide-card">
+            <h3 class="card-title">Hướng Dẫn Di Chuyển</h3>
+
+            <div class="key-group">
+              <span></span>
+              <span class="key">↑</span>
+              <span></span>
+              <span class="key">←</span>
+              <span class="key">↓</span>
+              <span class="key">→</span>
+            </div>
+
+            <div class="key-group">
+              <span></span>
+              <span class="key">W</span>
+              <span></span>
+              <span class="key">A</span>
+              <span class="key">S</span>
+              <span class="key">D</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="history">
+        <h2 class="history-title">Lịch Sử Lượt Chơi</h2>
+
+        <table class="history-table">
+          <thead>
+            <tr>
+              <th class="col-number">#</th>
+              <th class="col-move">Bước đi</th>
+              <th class="col-time">Thời Gian</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- daya -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <script src="./script.js"></script>
+  </body>
+</html>

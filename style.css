@@ -1,0 +1,203 @@
+    /* ---------- Base ---------- */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family:  system-ui, "Segoe UI", Arial, sans-serif;
+      background: #f3f4f6;
+      color: #111827;
+      padding: 50px 40px;
+    }
+
+    /* ---------- Page container ---------- */
+    .container {
+      background: #ffffff;
+      border-radius: 6px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+      padding: 20px 20px 18px;
+      max-width: 905px;
+      margin: 0 auto;
+    }
+
+    /* ---------- Start button ---------- */
+    .top-bar {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .start-btn {
+      background: #22c55e;
+      color: #ffffff;
+      border: none;
+      border-radius: 6px;
+      padding: 10px 20px;
+      font-size: 12px;
+      font-weight: 700;
+      cursor: pointer;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.18);
+    }
+
+    .start-btn:hover {
+      background: #16a34a;
+    }
+
+    .win-message {
+      display: none;
+      color: #ef4444;
+      font-weight: 800;
+    }
+
+    /* ---------- Game area (board + sidebar) ---------- */
+    .game-area {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      gap: 18px;
+      margin-bottom: 20px;
+    }
+
+    /* ---------- Board ---------- */
+    .board {
+      background: #f9fafb;
+      border-radius: 6px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
+      padding: 14px;
+      width: 542px;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+    }
+
+    .tile {
+      aspect-ratio: 1 / 1;
+      border-radius: 6px;
+      border: 1px solid rgba(0, 0, 0, 0.04);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 17px;
+      font-weight: 800;
+    }
+
+    /* One class per tile colour */
+    .tile-1  { background: #dcfce7; color: #10b981; }
+    .tile-2  { background: #fee2e2; color: #ef4444; }
+    .tile-3  { background: #dbeafe; color: #3b82f6; }
+    .tile-4  { background: #f3e8ff; color: #a855f7; }
+    .tile-5  { background: #fef9c3; color: #eab308; }
+    .tile-6  { background: #fce7f3; color: #ec4899; }
+    .tile-7  { background: #e0e7ff; color: #6366f1; }
+    .tile-8  { background: #f3f4f6; color: #6b7280; }
+    .tile-9  { background: #d1fae5; color: #10b981; }
+    .tile-10 { background: #fef3c7; color: #f59e0b; }
+    .tile-11 { background: #ecfccb; color: #84cc16; }
+
+    .tile-empty {
+      background: #000000;
+      border-color: #000000;
+    }
+
+    /* ---------- Sidebar ---------- */
+    .sidebar {
+      width: 113px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .card-title {
+      font-weight: 700;
+      text-align: center;
+    }
+
+    /* Clock card */
+    .clock-card {
+      background: #dcfce7;
+      border-radius: 6px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
+      padding: 14px 8px 12px;
+      text-align: center;
+    }
+
+    .clock-card .card-title {
+      font-size: 12px;
+      margin-bottom: 14px;
+    }
+
+    .clock-time {
+      font-size: 20px;
+      font-weight: 800;
+      color: #1f2937;
+    }
+
+    /* Guide card */
+    .guide-card {
+      background: #f9fafb;
+      border-radius: 6px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
+      padding: 10px 6px 12px;
+    }
+
+    .guide-card .card-title {
+      font-size: 9px;
+      margin-bottom: 6px;
+    }
+
+    .key-group {
+      display: grid;
+      grid-template-columns: repeat(3, 20px);
+      grid-auto-rows: 20px;
+      gap: 2px;
+      justify-content: center;
+      margin-bottom: 4px;
+    }
+
+    .key {
+      background: #e5e7eb;
+      border-radius: 4px;
+      font-size: 7px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* ---------- History ---------- */
+    .history {
+      background: #f9fafb;
+      border-radius: 6px;
+      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+      padding: 14px 14px 14px;
+    }
+
+    .history-title {
+      font-size: 12px;
+      font-weight: 700;
+      text-align: center;
+      margin-bottom: 12px;
+    }
+
+    .history-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 10px;
+      text-align: left;
+    }
+
+    .history-table th {
+      background: #e5e7eb;
+      font-weight: 700;
+      padding: 6px 5px;
+    }
+
+    .history-table td {
+      padding: 6px 5px;
+      border-bottom: 1px solid #e5e7eb;
+    }
+
+    .col-number { width: 17%; }
+    .col-move   { width: 45%; }
+    .col-time   { width: 38%; }
